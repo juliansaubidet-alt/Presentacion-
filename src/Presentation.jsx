@@ -34,7 +34,7 @@ const SlideTitle = ({ children, anim, delay = 0.1, size = 44 }) => (
 const i18n = {
   es: {
     nav: { prev: "← Anterior", next: "Siguiente →", hint: "← → navegar" },
-    labels: ["Intro", "Problema", "Gaps", "Módulo", "Solución", "Manager", "Por qué", "Impacto", "Cierre", "Gracias"],
+    labels: ["Intro", "Problema", "Gaps", "Módulo", "Solución", "Colaborador", "Ruta", "Habilidades", "Objetivos", "Aprendizaje", "Revisión", "Confirmación", "Manager", "Por qué", "Impacto", "Cierre", "Gracias"],
 
     intro: {
       tag: "🏆 Huckaton 2026 · Producto",
@@ -89,6 +89,118 @@ const i18n = {
           { name: "Carlos Ruiz",  status: "Sin plan",    sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.05)", rb: "rgba(255,255,255,0.03)", rb2: "rgba(255,255,255,0.06)" },
         ],
       },
+    },
+
+    collabView: {
+      eyebrow: "Vista del Colaborador · Inicio", title: "Antes del plan: todo lo que vas a desbloquear.",
+      subtitle: "La pantalla inicial muestra el contexto del colaborador — su rol actual, su antigüedad — y anticipa lo que va a poder construir. Un solo botón para empezar.",
+      roleLabel: "CURRENT ROLE", roleName: "Product Designer", roleTeam: "Design Team", tenure: "2.5 yr tenure",
+      unlockLabel: "LO QUE VAS A DESBLOQUEAR",
+      unlockItems: ["Tu mapa de carrera personalizado", "Análisis de brechas de skills", "Objetivos de desarrollo claros", "Acciones recomendadas por rol"],
+      emptyTitle: "Todavía no creaste tu plan de carrera",
+      emptyDesc: "Definí tu próximo rol, identificá tus brechas de skills y trazá el camino para llegar ahí.",
+      rolePill: "Rol actual: Product Designer",
+      ctaBtn: "Crear mi plan de carrera →",
+      ctaSub: "Tu manager podrá revisar y aprobar el plan una vez que lo envíes",
+    },
+
+    rutaView: {
+      eyebrow: "Paso 1 · Ruta Profesional", title: "¿Crecer hacia arriba o hacia otro lado?",
+      subtitle: "El colaborador elige entre crecimiento vertical (ascender dentro de su área) o movimiento lateral (explorar otro rol). También define la ruta específica, el tiempo estimado y el manager que va a revisar el plan.",
+      headerTitle: "Crear plan de carrera", stepLabel: "Paso 1 de 5 · Ruta profesional",
+      growthLabel: "TIPO DE CRECIMIENTO",
+      vertical: { icon: "↗", title: "Crecimiento vertical", desc: "Ascender dentro de tu área actual" },
+      lateral:  { icon: "⇄", title: "Movimiento lateral",   desc: "Explorar una área o rol diferente" },
+      fields: [
+        { label: "RUTA PROFESIONAL",       placeholder: "Seleccionar ruta..." },
+        { label: "DURACIÓN ESTIMADA",      placeholder: "Seleccionar duración..." },
+        { label: "MANAGER / LÍDER DIRECTO", placeholder: "Seleccionar manager..." },
+        { label: "DESCRIPCIÓN (opcional)", placeholder: "¿Por qué querés alcanzar este rol? ¿Qué te motiva?" },
+      ],
+    },
+
+    habilidadesView: {
+      eyebrow: "Paso 2 · Habilidades", title: "Las brechas, claras desde el principio.",
+      subtitle: "El sistema muestra automáticamente las habilidades técnicas y blandas requeridas para el rol objetivo. El colaborador marca cuáles ya tiene — las que faltan se convierten en el eje del plan. También puede agregar habilidades propias.",
+      stepLabel: "Paso 2 de 5 · Habilidades", roleTag: "Senior Designer",
+      hardLabel: "HABILIDADES TÉCNICAS REQUERIDAS",
+      hardSkills: [
+        { name: "Visual Design",   checked: true  },
+        { name: "Prototyping",     checked: false },
+        { name: "UX Research",     checked: true  },
+        { name: "Design Systems",  checked: true  },
+        { name: "Figma Advanced",  checked: false },
+        { name: "Design Critique", checked: true  },
+      ],
+      softLabel: "SOFT SKILLS",
+      softSkills: [
+        { name: "Comunicación efectiva",    checked: true  },
+        { name: "Trabajo en equipo",        checked: true  },
+        { name: "Liderazgo",                checked: false },
+        { name: "Resolución de conflictos", checked: true  },
+        { name: "Pensamiento crítico",      checked: true  },
+        { name: "Empatía",                  checked: false },
+      ],
+      gapHardLabel: "HARD (4)", gapSoftLabel: "SOFT (4)",
+      gapHard: ["Visual Design ×", "UX Research ×", "Design Systems ×", "Design Critique ×"],
+      gapSoft: ["Comunicación efectiva ×", "Trabajo en equipo ×", "Resolución de conflictos ×", "Pensamiento crítico ×"],
+    },
+
+    objetivosView: {
+      eyebrow: "Paso 3 · Objetivos", title: "Corto, mediano y largo plazo. Conectados.",
+      subtitle: "La IA sugiere objetivos en tres horizontes temporales según la ruta elegida. El colaborador puede editarlos, eliminarlos o agregar los suyos. El plan siempre es del colaborador — las sugerencias son un punto de partida.",
+      stepLabel: "Paso 3 de 5 · Objetivos",
+      devLabel: "OBJETIVOS DE DESARROLLO", devSub: "Sugeridos según tu ruta — editá, eliminá o agregá los tuyos",
+      goals: [
+        { horizonLabel: "CORTO PLAZO",   tag: "Corto plazo",   tagColor: "#22c55e",  tagBg: "rgba(34,197,94,0.15)",   text: "Liderar al menos 1 proyecto de diseño de principio a fin" },
+        { horizonLabel: "MEDIANO PLAZO", tag: "Mediano plazo", tagColor: "#f59e0b",  tagBg: "rgba(245,158,11,0.15)",  text: "Obtener una certificación en Design Systems o UX Research" },
+        { horizonLabel: "LARGO PLAZO",   tag: "Largo plazo",   tagColor: "#a78bfa",  tagBg: "rgba(167,139,250,0.15)", text: "Alcanzar el nivel Senior con aprobación del manager y HR" },
+      ],
+      addLabel: "AGREGAR OBJETIVO", addPlaceholder: "Describí el objetivo...", addBtn: "+ Agregar",
+    },
+
+    aprendizajeView: {
+      eyebrow: "Paso 4 · Aprendizaje", title: "Los recursos correctos, en el orden correcto.",
+      subtitle: "El módulo integra cursos, certificaciones y workshops de Humand Learn y plataformas externas (LinkedIn Learning, Figma Academy, IDEO U). Cada recurso tiene una prioridad según la ruta: Esencial, Recomendado u Opcional.",
+      stepLabel: "Paso 4 de 5 · Aprendizaje",
+      listTitle: "Cursos disponibles en Humand", listSub: "Ordenados por prioridad según tu ruta",
+      filters: ["Esencial", "Recomendado", "Opcional"],
+      courses: [
+        { type: "CURSO",         icon: "📘", name: "Stakeholder Management Fundamentals", source: "LinkedIn Learning · 4h",  tag: "Esencial",     tc: "#22c55e",  tb: "rgba(34,197,94,0.15)"   },
+        { type: "CERTIFICACIÓN", icon: "🏅", name: "Advanced Design Systems",             source: "Figma Academy · 12h",     tag: "Recomendado",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "CURSO",         icon: "📘", name: "UX Research Methods",                 source: "Humand Learn · 8h",       tag: "Recomendado",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "WORKSHOP",      icon: "👥", name: "Cross-functional Collaboration",      source: "Humand Learn · 2h",       tag: "Recomendado",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "CURSO",         icon: "📘", name: "Comunicación Ejecutiva",              source: "Humand Learn · 5h",       tag: "Recomendado",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "WORKSHOP",      icon: "👥", name: "Design Critique & Feedback",          source: "Humand Learn · 3h",       tag: "Opcional",     tc: "rgba(255,255,255,0.3)", tb: "rgba(255,255,255,0.06)" },
+      ],
+    },
+
+    revisionView: {
+      eyebrow: "Paso 5 · Revisión y Envío", title: "Un plan completo antes de compartirlo.",
+      subtitle: "El colaborador ve el resumen completo — ruta, habilidades, objetivos — antes de enviarlo. El manager recibe una notificación y puede aprobarlo o sugerir cambios con un comentario.",
+      stepLabel: "Paso 5 de 5 · Revisión",
+      alertText: "Todo listo — revisá tu plan antes de enviarlo",
+      alertSub: "Se le notificará a María González para revisarlo y aprobarlo.",
+      routeLabel: "RUTA PROFESIONAL", routeTag: "Vertical", routeRole: "Senior Designer", routeDur: "Duración: 6 meses", routeMgr: "Manager: María González",
+      goalsLabel: "OBJETIVOS (3)",
+      goals: [
+        { tag: "Corto",   color: "#22c55e", text: "Liderar 1 proyecto de diseño" },
+        { tag: "Mediano", color: "#f59e0b", text: "Certificación Design Systems"  },
+        { tag: "Largo",   color: "#a78bfa", text: "Alcanzar nivel Senior"         },
+      ],
+      skillsLabel: "SKILLS (6)",
+      hardLabel: "Hard skills", hardSkills: ["Prototyping", "Visual Design", "Figma Advanced"],
+      softLabel: "Soft skills", softSkills: ["Pensamiento crítico", "Comunicación efectiva", "Mentoría"],
+      sendBtn: "Enviar plan ✓",
+    },
+
+    confirmView: {
+      eyebrow: "Confirmación de Envío", title: "El plan enviado. El manager en el loop.",
+      subtitle: "Una vez enviado, el colaborador recibe confirmación y sabe que su manager fue notificado. El plan queda compartido y visible para ambos. El colaborador recibirá una notificación cuando el manager lo revise.",
+      successIcon: "✓", successTitle: "¡Plan enviado con éxito!",
+      successDesc: "Tu plan de carrera fue enviado para revisión.\nTu manager recibirá una notificación y podrá aprobarlo o sugerirte cambios.",
+      ctaBtn: "Ver mi plan de carrera",
+      ctaSub: "Recibirás una notificación cuando tu manager lo revise",
     },
 
     managerView: {
@@ -166,7 +278,7 @@ const i18n = {
 
   en: {
     nav: { prev: "← Previous", next: "Next →", hint: "← → navigate" },
-    labels: ["Intro", "Problem", "Gaps", "Module", "Solution", "Manager", "Why Us", "Impact", "Closing", "Thanks"],
+    labels: ["Intro", "Problem", "Gaps", "Module", "Solution", "Employee", "Path", "Skills", "Goals", "Learning", "Review", "Confirmed", "Manager", "Why Us", "Impact", "Closing", "Thanks"],
 
     intro: {
       tag: "🏆 Hackathon 2026 · Product",
@@ -221,6 +333,118 @@ const i18n = {
           { name: "Carlos Ruiz",  status: "No plan",      sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.05)", rb: "rgba(255,255,255,0.03)", rb2: "rgba(255,255,255,0.06)" },
         ],
       },
+    },
+
+    collabView: {
+      eyebrow: "Employee View · Start", title: "Before the plan: everything you're about to unlock.",
+      subtitle: "The initial screen shows the employee's context — their current role, their tenure — and previews what they'll be able to build. One button to get started.",
+      roleLabel: "CURRENT ROLE", roleName: "Product Designer", roleTeam: "Design Team", tenure: "2.5 yr tenure",
+      unlockLabel: "WHAT YOU WILL UNLOCK",
+      unlockItems: ["Your personalized career map", "Skills gap analysis", "Clear development goals", "Role-based recommended actions"],
+      emptyTitle: "You haven't created your career plan yet",
+      emptyDesc: "Define your next role, identify your skills gaps and map out the path to get there.",
+      rolePill: "Current role: Product Designer",
+      ctaBtn: "Create my career plan →",
+      ctaSub: "Your manager will be able to review and approve the plan once you submit it",
+    },
+
+    rutaView: {
+      eyebrow: "Step 1 · Career Path", title: "Grow up or grow sideways?",
+      subtitle: "The employee chooses between vertical growth (advancing within their area) or lateral movement (exploring another role). They also define the specific path, estimated time and the manager who will review the plan.",
+      headerTitle: "Create career plan", stepLabel: "Step 1 of 5 · Career path",
+      growthLabel: "GROWTH TYPE",
+      vertical: { icon: "↗", title: "Vertical growth",    desc: "Advance within your current area" },
+      lateral:  { icon: "⇄", title: "Lateral movement",  desc: "Explore a different area or role" },
+      fields: [
+        { label: "CAREER PATH",          placeholder: "Select path..." },
+        { label: "ESTIMATED DURATION",   placeholder: "Select duration..." },
+        { label: "MANAGER / TEAM LEAD",  placeholder: "Select manager..." },
+        { label: "DESCRIPTION (optional)", placeholder: "Why do you want to reach this role? What motivates you?" },
+      ],
+    },
+
+    habilidadesView: {
+      eyebrow: "Step 2 · Skills", title: "Gaps, clear from the start.",
+      subtitle: "The system automatically shows the technical and soft skills required for the target role. The employee marks which ones they already have — the missing ones become the backbone of the plan.",
+      stepLabel: "Step 2 of 5 · Skills", roleTag: "Senior Designer",
+      hardLabel: "REQUIRED TECHNICAL SKILLS",
+      hardSkills: [
+        { name: "Visual Design",   checked: true  },
+        { name: "Prototyping",     checked: false },
+        { name: "UX Research",     checked: true  },
+        { name: "Design Systems",  checked: true  },
+        { name: "Figma Advanced",  checked: false },
+        { name: "Design Critique", checked: true  },
+      ],
+      softLabel: "SOFT SKILLS",
+      softSkills: [
+        { name: "Effective Communication", checked: true  },
+        { name: "Teamwork",                checked: true  },
+        { name: "Leadership",              checked: false },
+        { name: "Conflict Resolution",     checked: true  },
+        { name: "Critical Thinking",       checked: true  },
+        { name: "Empathy",                 checked: false },
+      ],
+      gapHardLabel: "HARD (4)", gapSoftLabel: "SOFT (4)",
+      gapHard: ["Visual Design ×", "UX Research ×", "Design Systems ×", "Design Critique ×"],
+      gapSoft: ["Effective Communication ×", "Teamwork ×", "Conflict Resolution ×", "Critical Thinking ×"],
+    },
+
+    objetivosView: {
+      eyebrow: "Step 3 · Goals", title: "Short, medium and long-term. Connected.",
+      subtitle: "AI suggests goals across three time horizons based on the chosen path. The employee can edit, delete or add their own. The plan always belongs to the employee — suggestions are just a starting point.",
+      stepLabel: "Step 3 of 5 · Goals",
+      devLabel: "DEVELOPMENT GOALS", devSub: "AI-suggested based on your path — edit, delete or add your own",
+      goals: [
+        { horizonLabel: "SHORT TERM",  tag: "Short term",  tagColor: "#22c55e",  tagBg: "rgba(34,197,94,0.15)",   text: "Lead at least 1 design project end to end" },
+        { horizonLabel: "MEDIUM TERM", tag: "Medium term", tagColor: "#f59e0b",  tagBg: "rgba(245,158,11,0.15)",  text: "Get certified in Design Systems or UX Research" },
+        { horizonLabel: "LONG TERM",   tag: "Long term",   tagColor: "#a78bfa",  tagBg: "rgba(167,139,250,0.15)", text: "Reach Senior level with manager and HR approval" },
+      ],
+      addLabel: "ADD GOAL", addPlaceholder: "Describe the goal...", addBtn: "+ Add",
+    },
+
+    aprendizajeView: {
+      eyebrow: "Step 4 · Learning", title: "The right resources, in the right order.",
+      subtitle: "The module integrates courses, certifications and workshops from Humand Learn and external platforms (LinkedIn Learning, Figma Academy, IDEO U). Each resource has a priority based on the path: Essential, Recommended or Optional.",
+      stepLabel: "Step 4 of 5 · Learning",
+      listTitle: "Available courses in Humand", listSub: "Sorted by priority based on your path",
+      filters: ["Essential", "Recommended", "Optional"],
+      courses: [
+        { type: "COURSE",          icon: "📘", name: "Stakeholder Management Fundamentals", source: "LinkedIn Learning · 4h",  tag: "Essential",    tc: "#22c55e",  tb: "rgba(34,197,94,0.15)"   },
+        { type: "CERTIFICATION",   icon: "🏅", name: "Advanced Design Systems",             source: "Figma Academy · 12h",     tag: "Recommended",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "COURSE",          icon: "📘", name: "UX Research Methods",                 source: "Humand Learn · 8h",       tag: "Recommended",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "WORKSHOP",        icon: "👥", name: "Cross-functional Collaboration",      source: "Humand Learn · 2h",       tag: "Recommended",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "COURSE",          icon: "📘", name: "Executive Communication",             source: "Humand Learn · 5h",       tag: "Recommended",  tc: BRAND,      tb: "rgba(111,147,235,0.15)" },
+        { type: "WORKSHOP",        icon: "👥", name: "Design Critique & Feedback",          source: "Humand Learn · 3h",       tag: "Optional",     tc: "rgba(255,255,255,0.3)", tb: "rgba(255,255,255,0.06)" },
+      ],
+    },
+
+    revisionView: {
+      eyebrow: "Step 5 · Review & Submit", title: "A complete plan before sharing it.",
+      subtitle: "The employee sees the full summary — path, skills, goals — before submitting. The manager gets a notification and can approve it or suggest changes with a comment.",
+      stepLabel: "Step 5 of 5 · Review",
+      alertText: "All set — review your plan before submitting",
+      alertSub: "María González will be notified to review and approve it.",
+      routeLabel: "CAREER PATH", routeTag: "Vertical", routeRole: "Senior Designer", routeDur: "Duration: 6 months", routeMgr: "Manager: María González",
+      goalsLabel: "GOALS (3)",
+      goals: [
+        { tag: "Short",  color: "#22c55e", text: "Lead 1 design project"       },
+        { tag: "Medium", color: "#f59e0b", text: "Design Systems certification" },
+        { tag: "Long",   color: "#a78bfa", text: "Reach Senior level"           },
+      ],
+      skillsLabel: "SKILLS (6)",
+      hardLabel: "Hard skills", hardSkills: ["Prototyping", "Visual Design", "Figma Advanced"],
+      softLabel: "Soft skills", softSkills: ["Critical Thinking", "Effective Communication", "Mentoring"],
+      sendBtn: "Submit plan ✓",
+    },
+
+    confirmView: {
+      eyebrow: "Submission Confirmed", title: "Plan submitted. Manager in the loop.",
+      subtitle: "Once submitted, the employee gets confirmation that their manager was notified. The plan is shared and visible to both. The employee will get a notification when the manager reviews it.",
+      successIcon: "✓", successTitle: "Plan successfully submitted!",
+      successDesc: "Your career plan was sent for review.\nYour manager will receive a notification and can approve it or suggest changes.",
+      ctaBtn: "View my career plan",
+      ctaSub: "You'll get a notification when your manager reviews it",
     },
 
     managerView: {
@@ -483,7 +707,362 @@ const slides = [
     );
   }},
 
-  /* 5 ── MANAGER VIEW */
+  /* 5 ── COLABORADOR VIEW */
+  { label: "Colaborador", render: (anim, t) => {
+    const c = t.collabView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 30% 60%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        {/* Left: text */}
+        <div style={{ flex: "0 0 280px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={30}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(16px)", transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        {/* Right: mock UI */}
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          {/* Header */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Plan de Carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
+              {["Colaborador", "Manager", "HU Admin"].map((tab, i) => (
+                <span key={i} style={{ fontSize: 10, padding: "3px 10px", borderRadius: 999, background: i === 0 ? BRAND : "transparent", color: i === 0 ? "#fff" : "rgba(255,255,255,0.35)", fontWeight: 600 }}>{tab}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ padding: "16px 18px", display: "flex", flexDirection: "column", gap: 12 }}>
+            {/* Top row: role card + unlock list */}
+            <div style={{ display: "flex", gap: 12 }}>
+              {/* Role card */}
+              <div style={{ flex: 1, background: "linear-gradient(135deg, #3b5bdb, #6f93eb)", borderRadius: 14, padding: "16px 18px" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "1px", marginBottom: 6 }}>{c.roleLabel}</div>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 800, color: "#fff", marginBottom: 4 }}>{c.roleName}</div>
+                <div style={{ fontSize: 11, color: "rgba(255,255,255,0.65)", marginBottom: 12 }}>{c.roleTeam}</div>
+                <span style={{ fontSize: 10, fontWeight: 600, color: "#fff", background: "rgba(255,255,255,0.2)", padding: "4px 10px", borderRadius: 999 }}>{c.tenure}</span>
+              </div>
+              {/* Unlock list */}
+              <div style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, padding: "14px 16px" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px", marginBottom: 10 }}>{c.unlockLabel}</div>
+                {c.unlockItems.map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11, color: "rgba(255,255,255,0.65)", marginBottom: 7 }}>
+                    <span style={{ color: "rgba(255,255,255,0.3)", fontSize: 10 }}>·</span>{item}
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Empty state */}
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 14, padding: "16px 18px", textAlign: "center" }}>
+              <div style={{ fontSize: 22, marginBottom: 8 }}>⚙️</div>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff", marginBottom: 5 }}>{c.emptyTitle}</div>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", marginBottom: 10 }}>{c.emptyDesc}</div>
+              <span style={{ fontSize: 10, color: BRAND, background: "rgba(111,147,235,0.15)", border: "1px solid rgba(111,147,235,0.2)", padding: "3px 12px", borderRadius: 999 }}>● {c.rolePill}</span>
+            </div>
+            {/* CTA */}
+            <div style={{ background: BRAND, borderRadius: 12, padding: "13px", textAlign: "center" }}>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 800, color: "#fff" }}>{c.ctaBtn}</div>
+            </div>
+            <div style={{ textAlign: "center", fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: -4 }}>{c.ctaSub}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 6 ── RUTA PROFESIONAL */
+  { label: "Ruta", render: (anim, t) => {
+    const c = t.rutaView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 30% 40%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        {/* Left */}
+        <div style={{ flex: "0 0 280px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={30}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(16px)", transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        {/* Right: mock UI */}
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          {/* Header */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>{c.headerTitle}</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
+              {["Colaborador", "Manager", "HU Admin"].map((tab, i) => (
+                <span key={i} style={{ fontSize: 10, padding: "3px 10px", borderRadius: 999, background: i === 0 ? BRAND : "transparent", color: i === 0 ? "#fff" : "rgba(255,255,255,0.35)", fontWeight: 600 }}>{tab}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 11 }}>
+            {/* Progress */}
+            <div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 6 }}>{c.stepLabel}</div>
+              <div style={{ display: "flex", gap: 3 }}>
+                {[0,1,2,3,4].map(i => (
+                  <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: i === 0 ? BRAND : "rgba(255,255,255,0.1)" }} />
+                ))}
+              </div>
+            </div>
+            {/* Growth type */}
+            <div>
+              <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px", marginBottom: 8 }}>{c.growthLabel}</div>
+              <div style={{ display: "flex", gap: 10 }}>
+                {[c.vertical, c.lateral].map((opt, i) => (
+                  <div key={i} style={{ flex: 1, borderRadius: 10, border: `1.5px solid ${i === 0 ? BRAND : "rgba(255,255,255,0.1)"}`, background: i === 0 ? "rgba(111,147,235,0.12)" : "rgba(255,255,255,0.03)", padding: "10px 12px" }}>
+                    <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, fontWeight: 700, color: i === 0 ? "#a5bcf5" : "rgba(255,255,255,0.5)", marginBottom: 3 }}>{opt.icon} {opt.title}</div>
+                    <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)" }}>{opt.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Fields */}
+            {c.fields.map((f, i) => (
+              <div key={i}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px", marginBottom: 5 }}>{f.label}</div>
+                <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "8px 12px", fontSize: 11, color: "rgba(255,255,255,0.25)" }}>{f.placeholder}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 8 ── HABILIDADES */
+  { label: "Habilidades", render: (anim, t) => {
+    const c = t.habilidadesView;
+    const SkillPill = ({ s, blue }) => (
+      <span style={{ padding: "5px 12px", borderRadius: 999, fontSize: 11, fontWeight: 600, background: s.checked ? (blue ? "rgba(111,147,235,0.2)" : "rgba(34,197,94,0.15)") : "rgba(255,255,255,0.06)", color: s.checked ? (blue ? "#a5bcf5" : "#86efac") : "rgba(255,255,255,0.4)", border: `1px solid ${s.checked ? (blue ? "rgba(111,147,235,0.3)" : "rgba(34,197,94,0.25)") : "rgba(255,255,255,0.1)"}` }}>
+        {s.checked ? "✓ " : ""}{s.name}
+      </span>
+    );
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 30% 60%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        <div style={{ flex: "0 0 270px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={30}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Crear plan de carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>{["Colaborador","Manager","HU Admin"].map((tab,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?BRAND:"transparent", color:i===0?"#fff":"rgba(255,255,255,0.35)", fontWeight:600 }}>{tab}</span>)}</div>
+          </div>
+          <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 6 }}>{c.stepLabel}</div>
+              <div style={{ display: "flex", gap: 3, marginBottom: 12 }}>{[0,1,2,3,4].map(i=><div key={i} style={{ flex:1, height:3, borderRadius:2, background:i<=1?BRAND:"rgba(255,255,255,0.1)" }} />)}</div>
+            </div>
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <span style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px" }}>{c.hardLabel}</span>
+                <span style={{ fontSize: 9, fontWeight: 600, color: "#a78bfa", background: "rgba(167,139,250,0.15)", padding: "2px 8px", borderRadius: 999 }}>{c.roleTag}</span>
+              </div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{c.hardSkills.map((s,i)=><SkillPill key={i} s={s} blue />)}</div>
+            </div>
+            <div>
+              <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px", marginBottom: 8 }}>{c.softLabel}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>{c.softSkills.map((s,i)=><SkillPill key={i} s={s} blue={false} />)}</div>
+            </div>
+            <div style={{ display: "flex", gap: 10 }}>
+              {[[c.gapHardLabel, c.gapHard, "#a5bcf5", "rgba(111,147,235,0.1)"], [c.gapSoftLabel, c.gapSoft, "#86efac", "rgba(34,197,94,0.08)"]].map(([label, items, color, bg], ci) => (
+                <div key={ci} style={{ flex: 1, background: bg, border: `1px solid ${color}22`, borderRadius: 10, padding: "10px 12px" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color, marginBottom: 6 }}>{label}</div>
+                  {items.map((item,i)=><div key={i} style={{ fontSize: 11, color: "rgba(255,255,255,0.55)", marginBottom: 3 }}>{item}</div>)}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 9 ── OBJETIVOS */
+  { label: "Objetivos", render: (anim, t) => {
+    const c = t.objetivosView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 70% 40%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        <div style={{ flex: "0 0 270px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={30}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Crear plan de carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>{["Colaborador","Manager","HU Admin"].map((tab,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?BRAND:"transparent", color:i===0?"#fff":"rgba(255,255,255,0.35)", fontWeight:600 }}>{tab}</span>)}</div>
+          </div>
+          <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 6 }}>{c.stepLabel}</div>
+              <div style={{ display: "flex", gap: 3, marginBottom: 10 }}>{[0,1,2,3,4].map(i=><div key={i} style={{ flex:1, height:3, borderRadius:2, background:i<=2?BRAND:"rgba(255,255,255,0.1)" }} />)}</div>
+            </div>
+            <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.4)", letterSpacing: "1px" }}>{c.devLabel}</div>
+            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)", marginTop: -6 }}>{c.devSub}</div>
+            {c.goals.map((g, i) => (
+              <div key={i}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "1px", marginBottom: 5 }}>{g.horizonLabel}</div>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "8px 12px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ fontSize: 10, fontWeight: 700, color: g.tagColor, background: g.tagBg, padding: "2px 8px", borderRadius: 999 }}>{g.tag}</span>
+                    <span style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>{g.text}</span>
+                  </div>
+                  <span style={{ fontSize: 10, color: "rgba(255,255,255,0.3)" }}>Editar ×</span>
+                </div>
+              </div>
+            ))}
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "10px 12px" }}>
+              <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "1px", marginBottom: 7 }}>{c.addLabel}</div>
+              <div style={{ display: "flex", gap: 8 }}>
+                <div style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, padding: "6px 10px", fontSize: 10, color: "rgba(255,255,255,0.4)" }}>Corto plazo ▾</div>
+                <div style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 6, padding: "6px 10px", fontSize: 10, color: "rgba(255,255,255,0.25)" }}>{c.addPlaceholder}</div>
+                <div style={{ background: BRAND, borderRadius: 6, padding: "6px 12px", fontSize: 11, fontWeight: 700, color: "#fff" }}>{c.addBtn}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 10 ── APRENDIZAJE */
+  { label: "Aprendizaje", render: (anim, t) => {
+    const c = t.aprendizajeView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 30% 40%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        <div style={{ flex: "0 0 270px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={28}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Crear plan de carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>{["Colaborador","Manager","HU Admin"].map((tab,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?BRAND:"transparent", color:i===0?"#fff":"rgba(255,255,255,0.35)", fontWeight:600 }}>{tab}</span>)}</div>
+          </div>
+          <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 6 }}>{c.stepLabel}</div>
+              <div style={{ display: "flex", gap: 3, marginBottom: 8 }}>{[0,1,2,3,4].map(i=><div key={i} style={{ flex:1, height:3, borderRadius:2, background:i<=3?BRAND:"rgba(255,255,255,0.1)" }} />)}</div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: "#fff" }}>{c.listTitle}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)", marginTop: 2 }}>{c.listSub}</div>
+              </div>
+              <div style={{ display: "flex", gap: 5 }}>{c.filters.map((f,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?"rgba(34,197,94,0.15)":i===1?"rgba(111,147,235,0.15)":"rgba(255,255,255,0.06)", color:i===0?"#86efac":i===1?"#a5bcf5":"rgba(255,255,255,0.4)", fontWeight:600 }}>{f}</span>)}</div>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {c.courses.map((course, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: i < c.courses.length-1 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                  <span style={{ fontSize: 16 }}>{course.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, color: "rgba(255,255,255,0.3)", letterSpacing: "0.5px" }}>{course.type}</div>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: "#fff" }}>{course.name}</div>
+                    <div style={{ fontSize: 10, color: "rgba(255,255,255,0.35)" }}>{course.source}</div>
+                  </div>
+                  <span style={{ fontSize: 9, fontWeight: 600, color: course.tc, background: course.tb, padding: "2px 8px", borderRadius: 999, flexShrink: 0 }}>{course.tag}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 11 ── REVISIÓN */
+  { label: "Revisión", render: (anim, t) => {
+    const c = t.revisionView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 70% 60%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        <div style={{ flex: "0 0 270px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={28}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Crear plan de carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>{["Colaborador","Manager","HU Admin"].map((tab,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?BRAND:"transparent", color:i===0?"#fff":"rgba(255,255,255,0.35)", fontWeight:600 }}>{tab}</span>)}</div>
+          </div>
+          <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
+            <div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 6 }}>{c.stepLabel}</div>
+              <div style={{ display: "flex", gap: 3, marginBottom: 8 }}>{[0,1,2,3,4].map(i=><div key={i} style={{ flex:1, height:3, borderRadius:2, background:BRAND }} />)}</div>
+            </div>
+            <div style={{ background: "rgba(111,147,235,0.1)", border: "1px solid rgba(111,147,235,0.2)", borderRadius: 10, padding: "10px 14px" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#a5bcf5" }}>🎉 {c.alertText}</div>
+              <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginTop: 3 }}>{c.alertSub}</div>
+            </div>
+            <div style={{ display: "flex", gap: 10 }}>
+              <div style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "12px" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "1px", marginBottom: 6 }}>{c.routeLabel}</div>
+                <span style={{ fontSize: 9, fontWeight: 600, color: BRAND, background: "rgba(111,147,235,0.15)", padding: "2px 8px", borderRadius: 999 }}>{c.routeTag}</span>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 800, color: "#fff", marginTop: 6 }}>{c.routeRole}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginTop: 4 }}>{c.routeDur}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>{c.routeMgr}</div>
+              </div>
+              <div style={{ flex: 1, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "12px" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "1px", marginBottom: 8 }}>{c.goalsLabel}</div>
+                {c.goals.map((g,i)=>(
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 5 }}>
+                    <span style={{ fontSize: 9, fontWeight: 700, color: g.color, background: `${g.color}22`, padding: "1px 6px", borderRadius: 999 }}>{g.tag}</span>
+                    <span style={{ fontSize: 11, color: "rgba(255,255,255,0.65)" }}>{g.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 10, padding: "12px" }}>
+              <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "1px", marginBottom: 8 }}>{c.skillsLabel}</div>
+              <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", marginBottom: 5 }}>{c.hardLabel}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 8 }}>{c.hardSkills.map((s,i)=><span key={i} style={{ fontSize:10, padding:"2px 9px", borderRadius:999, background:"rgba(255,255,255,0.07)", border:"1px solid rgba(255,255,255,0.1)", color:"rgba(255,255,255,0.6)" }}>{s}</span>)}</div>
+              <div style={{ fontSize: 9, color: "rgba(255,255,255,0.3)", marginBottom: 5 }}>{c.softLabel}</div>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>{c.softSkills.map((s,i)=><span key={i} style={{ fontSize:10, padding:"2px 9px", borderRadius:999, background:"rgba(255,255,255,0.07)", border:"1px solid rgba(255,255,255,0.1)", color:"rgba(255,255,255,0.6)" }}>{s}</span>)}</div>
+            </div>
+            <div style={{ background: BRAND, borderRadius: 10, padding: "12px", textAlign: "center" }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 800, color: "#fff" }}>{c.sendBtn}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 12 ── CONFIRMACIÓN */
+  { label: "Confirmación", render: (anim, t) => {
+    const c = t.confirmView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 50% 50%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        <div style={{ flex: "0 0 270px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={30}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Plan de Carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>{["Colaborador","Manager","HU Admin"].map((tab,i)=><span key={i} style={{ fontSize:10, padding:"3px 10px", borderRadius:999, background:i===0?BRAND:"transparent", color:i===0?"#fff":"rgba(255,255,255,0.35)", fontWeight:600 }}>{tab}</span>)}</div>
+          </div>
+          <div style={{ padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: 14 }}>
+            <div style={{ width: 56, height: 56, borderRadius: "50%", border: "2px solid #22c55e", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, color: "#22c55e", background: "rgba(34,197,94,0.1)" }}>{c.successIcon}</div>
+            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 800, color: "#fff" }}>{c.successTitle}</div>
+            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.45)", lineHeight: 1.6, whiteSpace: "pre-line", maxWidth: 360 }}>{c.successDesc}</p>
+            <div style={{ width: "100%", background: BRAND, borderRadius: 10, padding: "12px", marginTop: 8 }}>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 800, color: "#fff" }}>{c.ctaBtn}</span>
+            </div>
+            <div style={{ fontSize: 10, color: "rgba(255,255,255,0.3)" }}>{c.ctaSub}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 13 ── MANAGER VIEW */
   { label: "Manager", render: (anim, t) => {
     const c = t.managerView;
     return (
