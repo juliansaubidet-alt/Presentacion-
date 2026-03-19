@@ -273,6 +273,7 @@ const i18n = {
       title: "¡Muchas gracias!",
       body: "¿Preguntas? Estamos para ayudarte a transformar el desarrollo profesional de tu organización.",
       names: "Angelo · Sofia · Olivia · Julian",
+      feedbackBtn: "Danos tu feedback",
     },
   },
 
@@ -517,6 +518,7 @@ const i18n = {
       title: "Thank you!",
       body: "Questions? We're here to help you transform professional development in your organization.",
       names: "Angelo · Sofia · Olivia · Julian",
+      feedbackBtn: "Give us feedback",
     },
   },
 };
@@ -1248,9 +1250,6 @@ const slides = [
       <div style={{ height: "100%", background: "radial-gradient(ellipse at 50% 50%, #1a2a5e 0%, #0a0a14 65%)", position: "relative", overflow: "hidden", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
         <GridBg />
         <div style={{ position: "relative", zIndex: 2, textAlign: "center", opacity: anim ? 1 : 0, transform: anim ? "scale(1)" : "scale(0.95)", transition: "all 0.8s ease" }}>
-          <div style={{ width: 72, height: 72, borderRadius: 18, background: "rgba(111,147,235,0.2)", border: "1px solid rgba(111,147,235,0.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 28px", boxShadow: "0 12px 40px rgba(111,147,235,0.25)" }}>
-            <span style={{ fontFamily: "'Inter', sans-serif", color: "#a5bcf5", fontSize: 22, fontWeight: 800 }}>hu</span>
-          </div>
           <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: 48, fontWeight: 800, color: "#fff", margin: 0, lineHeight: 1.1 }}>{c.title}</h1>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 17, marginTop: 16, maxWidth: 460, margin: "16px auto 0", lineHeight: 1.6 }}>{c.body}</p>
           <div style={{ display: "flex", gap: 24, justifyContent: "center", marginTop: 36 }}>
@@ -1262,6 +1261,16 @@ const slides = [
                 <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 12, fontWeight: 500, whiteSpace: "pre-line", textAlign: "center", lineHeight: 1.3 }}>{p.name}</span>
               </div>
             ))}
+          </div>
+          <div style={{ marginTop: 36 }}>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgIV6HGXFao9nJS04mSMIMmEUFNqQYVyjq63sc_azfXApXpg/viewform" target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(111,147,235,0.15)", border: "1px solid rgba(111,147,235,0.35)", borderRadius: 14, padding: "12px 28px", textDecoration: "none", transition: "all 0.2s" }}
+              onMouseEnter={e => { e.currentTarget.style.background = "rgba(111,147,235,0.28)"; e.currentTarget.style.borderColor = "rgba(111,147,235,0.6)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "rgba(111,147,235,0.15)"; e.currentTarget.style.borderColor = "rgba(111,147,235,0.35)"; }}
+            >
+              <span style={{ fontSize: 16 }}>📝</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700, color: "#a5bcf5" }}>{c.feedbackBtn}</span>
+            </a>
           </div>
         </div>
       </div>
