@@ -34,7 +34,7 @@ const SlideTitle = ({ children, anim, delay = 0.1, size = 44 }) => (
 const i18n = {
   es: {
     nav: { prev: "← Anterior", next: "Siguiente →", hint: "← → navegar" },
-    labels: ["Intro", "Problema", "Gaps", "Solución", "Por qué", "Cierre", "Gracias"],
+    labels: ["Intro", "Problema", "Gaps", "Módulo", "Solución", "Manager", "Por qué", "Impacto", "Cierre", "Gracias"],
 
     intro: {
       tag: "🏆 Huckaton 2026 · Producto",
@@ -61,6 +61,18 @@ const i18n = {
       ],
     },
 
+    module: {
+      eyebrow: "Qué es el módulo", title: "El plan de carrera que realmente se usa.",
+      subtitle: "Career Path es un módulo dentro de Humand donde cada colaborador construye su plan en 5 pasos estructurados. La IA sugiere la ruta, las habilidades requeridas, los objetivos y los cursos — pero el colaborador decide.",
+      steps: [
+        { num: "01", icon: "🗺️", title: "Ruta profesional",  desc: "Define el tipo de crecimiento y el rol objetivo." },
+        { num: "02", icon: "🎯", title: "Habilidades",        desc: "Identifica brechas entre el rol actual y el objetivo." },
+        { num: "03", icon: "📋", title: "Objetivos",          desc: "Corto, mediano y largo plazo. Sugeridos y editables." },
+        { num: "04", icon: "📚", title: "Aprendizaje",        desc: "Cursos priorizados según la ruta: esenciales y recomendados." },
+        { num: "05", icon: "✅", title: "Revisión y envío",   desc: "El colaborador envía al manager para aprobación." },
+      ],
+    },
+
     solution: {
       eyebrow: "La Solución", title: "Dos vistas. Un solo camino.",
       collab: {
@@ -77,6 +89,46 @@ const i18n = {
           { name: "Carlos Ruiz",  status: "Sin plan",    sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.05)", rb: "rgba(255,255,255,0.03)", rb2: "rgba(255,255,255,0.06)" },
         ],
       },
+    },
+
+    managerView: {
+      eyebrow: "Vista del Manager", title: "El manager ve, acompaña y aprueba.",
+      subtitle: "El manager tiene una vista de su equipo completo con el estado de cada plan. Puede ver el mapa de carrera de cada persona, revisar habilidades y objetivos, aprobar el plan o sugerir cambios con un comentario.",
+      teamLabel: "Mi equipo", reportsLabel: "5 reportes",
+      team: [
+        { initials: "AG", color: "#6f93eb",  bg: "rgba(111,147,235,0.2)", name: "Ana García",   role: "Product Designer",   status: "En revisión", sc: "#fcd34d", sb: "rgba(245,158,11,0.15)" },
+        { initials: "LH", color: "#22c55e",  bg: "rgba(34,197,94,0.2)",  name: "Luis Herrera", role: "Frontend Engineer",  status: "Aprobado",    sc: "#86efac", sb: "rgba(34,197,94,0.15)"  },
+        { initials: "MT", color: "#f59e0b",  bg: "rgba(245,158,11,0.2)", name: "Mia Torres",   role: "UX Researcher",     status: "En revisión", sc: "#fcd34d", sb: "rgba(245,158,11,0.15)" },
+        { initials: "CR", color: "#f87171",  bg: "rgba(248,113,113,0.2)",name: "Carlos Ruiz",  role: "Backend Engineer",  status: "Sin plan",    sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.06)" },
+        { initials: "SL", color: "#a78bfa",  bg: "rgba(167,139,250,0.2)",name: "Sara López",   role: "Data Analyst",      status: "Sin plan",    sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.06)" },
+      ],
+      alertLabel: "Ana García envió un plan para revisión",
+      alertSub: "Senior Designer · 15 Mar 2026",
+      approveBtn: "✓ Aprobar", changesBtn: "↩ Cambios",
+      mapTitle: "Ana García — Mapa de carrera", mapSub: "Crecimiento vertical · 1 año",
+      nodes: [
+        { label: "Junior\nDesigner",   tag: "",      type: "done"    },
+        { label: "Product\nDesigner",  tag: "Aquí",  type: "current" },
+        { label: "Senior\nDesigner",   tag: "Meta",  type: "goal"    },
+        { label: "Design\nLead",       tag: "",      type: "locked"  },
+      ],
+      suggestLabel: "SUGERIR CAMBIOS", placeholder: "Compartí tu feedback sobre el plan de Ana...", sendBtn: "Enviar comentario",
+    },
+
+    impact: {
+      eyebrow: "Impacto en la organización", title: "Por qué esto importa para la empresa.",
+      stats: [
+        { num: "43%",   numColor: "#22c55e", label: "menos intención de renuncia",    sub: "en colaboradores con plan activo" },
+        { num: "3×",    numColor: BRAND,     label: "más impacto del reconocimiento", sub: "cuando es inmediato vs. diferido" },
+        { num: "+24pp", numColor: BRAND,     label: "más retención a 12 meses",       sub: "91% con plan vs. 67% sin plan" },
+        { num: "antes", numColor: "#a78bfa", label: "movilidad interna primero",      sub: "candidatos identificados antes de buscar afuera" },
+      ],
+      bullets: [
+        "Performance reviews con datos reales, no con memoria",
+        "Planificación de sucesión basada en perfiles, no en intuición",
+        "Movilidad interna inteligente antes de contratar afuera",
+        "Cultura de desarrollo que retiene sin aumentar costos",
+      ],
     },
 
     diff: {
@@ -114,7 +166,7 @@ const i18n = {
 
   en: {
     nav: { prev: "← Previous", next: "Next →", hint: "← → navigate" },
-    labels: ["Intro", "Problem", "Gaps", "Solution", "Why Us", "Closing", "Thanks"],
+    labels: ["Intro", "Problem", "Gaps", "Module", "Solution", "Manager", "Why Us", "Impact", "Closing", "Thanks"],
 
     intro: {
       tag: "🏆 Hackathon 2026 · Product",
@@ -141,6 +193,18 @@ const i18n = {
       ],
     },
 
+    module: {
+      eyebrow: "What is the module", title: "The career plan that actually gets used.",
+      subtitle: "Career Path is a module within Humand where each employee builds their plan in 5 structured steps. AI suggests the path, required skills, goals and courses — but the employee decides.",
+      steps: [
+        { num: "01", icon: "🗺️", title: "Career path",      desc: "Defines the type of growth and target role." },
+        { num: "02", icon: "🎯", title: "Skills",            desc: "Identifies gaps between current and target role." },
+        { num: "03", icon: "📋", title: "Goals",             desc: "Short, medium and long-term. AI-suggested and editable." },
+        { num: "04", icon: "📚", title: "Learning",          desc: "Courses prioritized by path: essential and recommended." },
+        { num: "05", icon: "✅", title: "Review & submit",   desc: "Employee sends plan to manager for approval." },
+      ],
+    },
+
     solution: {
       eyebrow: "The Solution", title: "Two views. One path.",
       collab: {
@@ -157,6 +221,46 @@ const i18n = {
           { name: "Carlos Ruiz",  status: "No plan",      sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.05)", rb: "rgba(255,255,255,0.03)", rb2: "rgba(255,255,255,0.06)" },
         ],
       },
+    },
+
+    managerView: {
+      eyebrow: "Manager View", title: "The manager sees, supports and approves.",
+      subtitle: "The manager has a complete view of their team and every plan's status. They can see each person's career map, review skills and goals, approve the plan or suggest changes with a comment.",
+      teamLabel: "My team", reportsLabel: "5 reports",
+      team: [
+        { initials: "AG", color: "#6f93eb",  bg: "rgba(111,147,235,0.2)", name: "Ana García",   role: "Product Designer",   status: "Under review", sc: "#fcd34d", sb: "rgba(245,158,11,0.15)" },
+        { initials: "LH", color: "#22c55e",  bg: "rgba(34,197,94,0.2)",  name: "Luis Herrera", role: "Frontend Engineer",  status: "Approved",     sc: "#86efac", sb: "rgba(34,197,94,0.15)"  },
+        { initials: "MT", color: "#f59e0b",  bg: "rgba(245,158,11,0.2)", name: "Mia Torres",   role: "UX Researcher",      status: "Under review", sc: "#fcd34d", sb: "rgba(245,158,11,0.15)" },
+        { initials: "CR", color: "#f87171",  bg: "rgba(248,113,113,0.2)",name: "Carlos Ruiz",  role: "Backend Engineer",   status: "No plan",      sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.06)" },
+        { initials: "SL", color: "#a78bfa",  bg: "rgba(167,139,250,0.2)",name: "Sara López",   role: "Data Analyst",       status: "No plan",      sc: "rgba(255,255,255,0.35)", sb: "rgba(255,255,255,0.06)" },
+      ],
+      alertLabel: "Ana García submitted a plan for review",
+      alertSub: "Senior Designer · 15 Mar 2026",
+      approveBtn: "✓ Approve", changesBtn: "↩ Changes",
+      mapTitle: "Ana García — Career map", mapSub: "Vertical growth · 1 year",
+      nodes: [
+        { label: "Junior\nDesigner",   tag: "",      type: "done"    },
+        { label: "Product\nDesigner",  tag: "Here",  type: "current" },
+        { label: "Senior\nDesigner",   tag: "Goal",  type: "goal"    },
+        { label: "Design\nLead",       tag: "",      type: "locked"  },
+      ],
+      suggestLabel: "SUGGEST CHANGES", placeholder: "Share your feedback on Ana's plan...", sendBtn: "Send comment",
+    },
+
+    impact: {
+      eyebrow: "Impact on the organization", title: "Why this matters for the business.",
+      stats: [
+        { num: "43%",   numColor: "#22c55e", label: "less intent to quit",          sub: "among employees with an active plan" },
+        { num: "3×",    numColor: BRAND,     label: "more impact from recognition", sub: "when immediate vs. delayed" },
+        { num: "+24pp", numColor: BRAND,     label: "more 12-month retention",      sub: "91% with plan vs. 67% without" },
+        { num: "before",numColor: "#a78bfa", label: "internal mobility first",      sub: "candidates identified before looking outside" },
+      ],
+      bullets: [
+        "Performance reviews with real data, not memory",
+        "Succession planning based on profiles, not intuition",
+        "Smart internal mobility before hiring outside",
+        "Development culture that retains without raising costs",
+      ],
     },
 
     diff: {
@@ -290,7 +394,33 @@ const slides = [
     );
   }},
 
-  /* 3 ── SOLUCIÓN */
+  /* 3 ── MÓDULO */
+  { label: "Módulo", render: (anim, t) => {
+    const c = t.module;
+    return (
+      <div style={{ height: "100%", background: "linear-gradient(135deg, #0a0a14 0%, #0f1520 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 60px" }}>
+        <div style={{ width: "100%", maxWidth: 820 }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={36}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 14, color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginTop: 12, marginBottom: 32, maxWidth: 780, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(16px)", transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+            {c.steps.map((step, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 16, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, padding: "16px 20px", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(-24px)", transition: `all 0.5s ease ${0.25 + i * 0.07}s` }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(111,147,235,0.2)", border: "1px solid rgba(111,147,235,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Inter', sans-serif", fontSize: 12, fontWeight: 800, color: BRAND, flexShrink: 0 }}>{step.num}</div>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "rgba(255,255,255,0.06)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>{step.icon}</div>
+                <div>
+                  <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 3 }}>{step.title}</div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.4 }}>{step.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 4 ── SOLUCIÓN */
   { label: "Solución", render: (anim, t) => {
     const c = t.solution;
     return (
@@ -353,7 +483,121 @@ const slides = [
     );
   }},
 
-  /* 4 ── DIFERENCIADOR */
+  /* 5 ── MANAGER VIEW */
+  { label: "Manager", render: (anim, t) => {
+    const c = t.managerView;
+    return (
+      <div style={{ height: "100%", background: "radial-gradient(ellipse at 70% 30%, #1a3060 0%, #0a0a14 60%)", display: "flex", alignItems: "center", padding: "40px 60px", gap: 48 }}>
+        {/* Left: text */}
+        <div style={{ flex: "0 0 300px" }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={32}>{c.title}</SlideTitle>
+          <p style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginTop: 14, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(16px)", transition: "all 0.5s ease 0.2s" }}>{c.subtitle}</p>
+        </div>
+        {/* Right: mock UI */}
+        <div style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 20, overflow: "hidden", opacity: anim ? 1 : 0, transform: anim ? "translateX(0)" : "translateX(30px)", transition: "all 0.6s ease 0.3s" }}>
+          {/* Header */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 18px", borderBottom: "1px solid rgba(255,255,255,0.08)", background: "rgba(111,147,235,0.08)" }}>
+            <div style={{ width: 26, height: 26, borderRadius: 7, background: BRAND, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 800, color: "#fff" }}>H</div>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 13, fontWeight: 700, color: "#fff" }}>Plan de Carrera</span>
+            <div style={{ marginLeft: "auto", display: "flex", gap: 6 }}>
+              {["Colaborador", "Manager", "HU Admin"].map((tab, i) => (
+                <span key={i} style={{ fontSize: 10, padding: "3px 10px", borderRadius: 999, background: i === 1 ? BRAND : "transparent", color: i === 1 ? "#fff" : "rgba(255,255,255,0.35)", fontWeight: 600 }}>{tab}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ display: "flex", minHeight: 0 }}>
+            {/* Team list */}
+            <div style={{ width: 220, borderRight: "1px solid rgba(255,255,255,0.07)", padding: "12px 0" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "0 14px 10px", fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.5)" }}>
+                <span>{c.teamLabel}</span><span>{c.reportsLabel}</span>
+              </div>
+              {c.team.map((m, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: 9, padding: "8px 14px", background: i === 0 ? "rgba(111,147,235,0.1)" : "transparent", borderLeft: i === 0 ? `2px solid ${BRAND}` : "2px solid transparent" }}>
+                  <div style={{ width: 28, height: 28, borderRadius: "50%", background: m.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 9, fontWeight: 800, color: m.color, flexShrink: 0 }}>{m.initials}</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{m.name}</div>
+                    <div style={{ fontSize: 9, color: "rgba(255,255,255,0.4)" }}>{m.role}</div>
+                  </div>
+                  <span style={{ fontSize: 9, fontWeight: 600, color: m.sc, background: m.sb, padding: "2px 7px", borderRadius: 999, flexShrink: 0 }}>{m.status}</span>
+                </div>
+              ))}
+            </div>
+            {/* Detail panel */}
+            <div style={{ flex: 1, padding: "12px 16px", display: "flex", flexDirection: "column", gap: 10 }}>
+              {/* Alert */}
+              <div style={{ background: "rgba(245,158,11,0.1)", border: "1px solid rgba(245,158,11,0.25)", borderRadius: 10, padding: "10px 14px" }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: "#fcd34d" }}>⚠ {c.alertLabel}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginTop: 2 }}>{c.alertSub}</div>
+                <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+                  <button style={{ flex: 1, padding: "6px 0", borderRadius: 8, border: "1px solid #22c55e", background: "transparent", color: "#86efac", fontSize: 11, fontWeight: 700, cursor: "pointer" }}>{c.approveBtn}</button>
+                  <button style={{ flex: 1, padding: "6px 0", borderRadius: 8, border: "1px solid rgba(255,255,255,0.2)", background: "transparent", color: "rgba(255,255,255,0.6)", fontSize: 11, fontWeight: 600, cursor: "pointer" }}>{c.changesBtn}</button>
+                </div>
+              </div>
+              {/* Career map */}
+              <div>
+                <div style={{ fontSize: 12, fontWeight: 700, color: "#fff", marginBottom: 2 }}>{c.mapTitle}</div>
+                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.4)", marginBottom: 10 }}>{c.mapSub}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 0 }}>
+                  {c.nodes.map((node, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center" }}>
+                      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+                        {node.tag ? <span style={{ fontSize: 8, color: BRAND, fontWeight: 700 }}>{node.tag}</span> : <span style={{ fontSize: 8, opacity: 0 }}>·</span>}
+                        <div style={{ width: 30, height: 30, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 800, fontFamily: "'Inter', sans-serif", ...nodeStyle[node.type] }}>
+                          {node.type === "done" ? "✓" : node.type === "current" ? "L2" : node.type === "goal" ? "L3" : "🔒"}
+                        </div>
+                        <div style={{ fontSize: 8, color: "rgba(255,255,255,0.4)", textAlign: "center", whiteSpace: "pre-line", lineHeight: 1.3 }}>{node.label}</div>
+                      </div>
+                      {i < c.nodes.length - 1 && <div style={{ width: 18, height: 2, background: i === 0 ? "#22c55e" : i === 1 ? BRAND : "rgba(255,255,255,0.1)", flexShrink: 0, marginBottom: 14 }} />}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Suggest changes */}
+              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 10, padding: "10px 12px" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "rgba(255,255,255,0.3)", letterSpacing: "1px", marginBottom: 6 }}>{c.suggestLabel}</div>
+                <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 6, padding: "7px 10px", fontSize: 10, color: "rgba(255,255,255,0.25)", marginBottom: 8 }}>{c.placeholder}</div>
+                <div style={{ display: "inline-block", background: BRAND, borderRadius: 7, padding: "6px 14px", fontSize: 10, fontWeight: 700, color: "#fff", cursor: "pointer" }}>{c.sendBtn}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 6 ── IMPACTO */
+  { label: "Impacto", render: (anim, t) => {
+    const c = t.impact;
+    return (
+      <div style={{ height: "100%", background: "linear-gradient(135deg, #0a0a14 0%, #0f1520 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "40px 60px" }}>
+        <div style={{ width: "100%", maxWidth: 860 }}>
+          <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
+          <SlideTitle anim={anim} size={36}>{c.title}</SlideTitle>
+          {/* 2×2 stat grid */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 28, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(20px)", transition: "all 0.5s ease 0.2s" }}>
+            {c.stats.map((s, i) => (
+              <div key={i} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "22px 28px", textAlign: "center" }}>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 38, fontWeight: 800, color: s.numColor, lineHeight: 1 }}>{s.num}</div>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700, color: "#fff", marginTop: 8 }}>{s.label}</div>
+                <div style={{ fontSize: 12, color: "rgba(255,255,255,0.38)", marginTop: 4 }}>{s.sub}</div>
+              </div>
+            ))}
+          </div>
+          {/* Bullet list */}
+          <div style={{ marginTop: 16, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 14, padding: "16px 22px", display: "flex", flexDirection: "column", gap: 10, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(20px)", transition: "all 0.5s ease 0.38s" }}>
+            {c.bullets.map((b, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 14, color: "rgba(255,255,255,0.7)" }}>
+                <span style={{ color: "#22c55e", fontSize: 13 }}>✓</span>{b}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }},
+
+  /* 6 ── DIFERENCIADOR */
   { label: "Por qué", render: (anim, t) => {
     const c = t.diff;
     return (
