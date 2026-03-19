@@ -37,7 +37,7 @@ const i18n = {
     labels: ["Intro", "Problema", "Gaps", "Módulo", "Solución", "Colaborador", "Ruta", "Habilidades", "Objetivos", "Aprendizaje", "Revisión", "Confirmación", "Manager", "Por qué", "Impacto", "Cierre", "Gracias"],
 
     intro: {
-      tag: "🏆 Huckaton 2026 · Producto",
+      tag: "🏆 Huckathon 2026 · Producto",
       titleA: "Plan de ", titleB: "Carrera", titleC: "\nque realmente\nfunciona.",
       subtitle: "Un módulo que conecta las aspiraciones del colaborador con la visión del manager, en tiempo real.",
       meta: [{ label: "Módulo", value: "Career Path" }, { label: "Plataforma", value: "Humand" }, { label: "Año", value: "2026" }],
@@ -51,13 +51,12 @@ const i18n = {
     },
 
     gaps: {
-      eyebrow: "Insights del Benchmark", title: "5 gaps que nadie está cubriendo",
+      eyebrow: "Insights del Benchmark", title: "4 gaps que nadie está cubriendo",
       items: [
         { num: "Gap 01", title: "El empleado es usuario de segunda clase",   body: "Los productos B2B requieren configuración pesada por HR antes de que el colaborador pueda usarlos." },
         { num: "Gap 02", title: "Learning y carrera, mundos separados",       body: "El usuario aprende en un lado y gestiona su carrera en otro. Ninguna plataforma los integra con profundidad." },
-        { num: "Gap 03", title: "Solo miden dentro de la plataforma",         body: "Nadie mide lo que ocurre fuera: proyectos reales, reconocimientos externos, logros en el trabajo." },
-        { num: "Gap 04", title: "IA solo para recomendar contenido",          body: "Casi nadie usa IA para ayudar al colaborador a reflexionar sobre su carrera o co-crear su propio plan." },
-        { num: "Gap 05", title: "Sin seguimiento en tiempo real",             body: "Los planes de carrera son documentos estáticos. No hay visibilidad compartida entre colaborador y manager." },
+        { num: "Gap 03", title: "IA solo para recomendar contenido",          body: "Casi nadie usa IA para ayudar al colaborador a reflexionar sobre su carrera o co-crear su propio plan." },
+        { num: "Gap 04", title: "Sin seguimiento en tiempo real",             body: "Los planes de carrera son documentos estáticos. No hay visibilidad compartida entre colaborador y manager." },
       ],
     },
 
@@ -296,13 +295,12 @@ const i18n = {
     },
 
     gaps: {
-      eyebrow: "Benchmark Insights", title: "5 gaps nobody is covering",
+      eyebrow: "Benchmark Insights", title: "4 gaps nobody is covering",
       items: [
         { num: "Gap 01", title: "Employee is a second-class user",     body: "B2B products require heavy HR configuration before the employee can use them." },
         { num: "Gap 02", title: "Learning and career, separate worlds", body: "Users learn in one place and manage their career in another. No platform integrates them deeply." },
-        { num: "Gap 03", title: "Only measure inside the platform",    body: "Nobody measures what happens outside: real projects, external recognition, work achievements." },
-        { num: "Gap 04", title: "AI only for content recommendations", body: "Almost nobody uses AI to help employees reflect on their career or co-create their own plan." },
-        { num: "Gap 05", title: "No real-time tracking",               body: "Career plans are static documents. No shared visibility between employee and manager." },
+        { num: "Gap 03", title: "AI only for content recommendations", body: "Almost nobody uses AI to help employees reflect on their career or co-create their own plan." },
+        { num: "Gap 04", title: "No real-time tracking",               body: "Career plans are static documents. No shared visibility between employee and manager." },
       ],
     },
 
@@ -607,7 +605,7 @@ const slides = [
           <Eyebrow anim={anim}>{c.eyebrow}</Eyebrow>
           <SlideTitle anim={anim}>{c.title}</SlideTitle>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, maxWidth: 900, width: "100%" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, maxWidth: 760, width: "100%" }}>
           {c.items.map((item, i) => (
             <div key={i} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: 22, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(24px)", transition: `all 0.5s ease ${0.1 + i * 0.08}s` }}>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 11, fontWeight: 700, color: BRAND, letterSpacing: "1px", textTransform: "uppercase", marginBottom: 10 }}>{item.num}</div>
@@ -1336,7 +1334,7 @@ export default function Presentation() {
 
       {/* ── TOP HUD ── */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 24px", background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 100%)", opacity: barVisible ? 1 : 0, transition: "opacity 0.4s ease", pointerEvents: barVisible ? "auto" : "none" }}>
-        <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, fontWeight: 700, color: "rgba(255,255,255,0.8)", letterSpacing: "-0.5px" }}>humand</div>
+        <img src="/humand-logo.png" alt="humand" style={{ height: 64, opacity: 0.9 }} />
         <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase", background: "rgba(0,0,0,0.35)", padding: "4px 12px", borderRadius: 20, backdropFilter: "blur(8px)" }}>
           {t.labels[current]}
         </span>
