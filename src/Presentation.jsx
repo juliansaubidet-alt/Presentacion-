@@ -175,8 +175,8 @@ const i18n = {
     },
 
     aprendizajeView: {
-      eyebrow: "Paso 4 · Aprendizaje", title: "Los recursos correctos, en el orden correcto.",
-      subtitle: "El módulo de cursos potencia y integra tu plan de carrera.",
+      eyebrow: "Paso 4 · Aprendizaje", title: "Integración módulo de cursos.",
+      subtitle: "El módulo integra cursos, certificaciones y workshops de Humand Learn. Cada recurso tiene una prioridad según tu plan de carrera: Esencial, Recomendado u Opcional.",
       stepLabel: "Paso 4 de 5 · Aprendizaje",
       listTitle: "Cursos disponibles en Humand", listSub: "Ordenados por prioridad según tu ruta",
       filters: ["Esencial", "Recomendado", "Opcional"],
@@ -419,8 +419,8 @@ const i18n = {
     },
 
     aprendizajeView: {
-      eyebrow: "Step 4 · Learning", title: "The right resources, in the right order.",
-      subtitle: "The course module powers and integrates your career plan.",
+      eyebrow: "Step 4 · Learning", title: "Course module integration.",
+      subtitle: "The module integrates courses, certifications and workshops from Humand Learn. Each resource has a priority based on your career plan: Essential, Recommended or Optional.",
       stepLabel: "Step 4 of 5 · Learning",
       listTitle: "Available courses in Humand", listSub: "Sorted by priority based on your path",
       filters: ["Essential", "Recommended", "Optional"],
