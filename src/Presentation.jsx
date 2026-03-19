@@ -1232,7 +1232,7 @@ const slides = [
           <div style={{ display: "flex", gap: 14, marginTop: 32, justifyContent: "center", opacity: anim ? 1 : 0, transition: "opacity 0.6s ease 0.45s" }}>
             {[
               { href: "https://growthhub-phi.vercel.app/", label: c.demoLabel,  sub: c.demoSub },
-              { href: "https://drive.google.com/file/d/1s14iBKnXezAyBelOJntJ8cD8ZmAjjeRx/view?usp=sharing", label: c.videoLabel, sub: c.videoSub },
+              { href: "https://drive.google.com/file/d/1azLC-QJGkxqKtz6MR4Cbua93rpat9NdC/view?usp=sharing", label: c.videoLabel, sub: c.videoSub },
             ].map((btn, i) => (
               <a key={i} href={btn.href} target="_blank" rel="noopener noreferrer"
                 style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, width: 196, background: "#fff", borderRadius: 14, padding: "14px 0", textDecoration: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.3)", transition: "transform 0.2s, box-shadow 0.2s" }}
