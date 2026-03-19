@@ -18,6 +18,22 @@ const GradText = ({ children }) => (
   </span>
 );
 
+const Counter = ({ target, anim, suffix = "", color }) => {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!anim) { setVal(0); return; }
+    const steps = 40, duration = 1400;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += target / steps;
+      if (current >= target) { setVal(target); clearInterval(timer); }
+      else setVal(Math.floor(current));
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [anim, target]);
+  return <span style={{ color }}>{val}{suffix}</span>;
+};
+
 const Eyebrow = ({ children, anim, delay = 0 }) => (
   <div style={{ fontSize: 11, textTransform: "uppercase", letterSpacing: "2px", color: BRAND, marginBottom: 14, fontFamily: "'DM Sans', sans-serif", opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(20px)", transition: `all 0.5s ease ${delay}s` }}>
     {children}
@@ -230,7 +246,7 @@ const i18n = {
     impact: {
       eyebrow: "Impacto en la organización", title: "Por qué esto importa para la empresa.",
       stats: [
-        { num: "43%",   numColor: "#22c55e", label: "menos intención de renuncia",    sub: "en colaboradores con plan activo" },
+        { num: "43%",   numColor: "#22c55e", label: "menos intención de renuncia",    sub: "en colaboradores con plan activo", countTo: 43, suffix: "%" },
         { num: "3×",    numColor: BRAND,     label: "más impacto del reconocimiento", sub: "cuando es inmediato vs. diferido" },
         { num: "+24pp", numColor: BRAND,     label: "más retención a 12 meses",       sub: "91% con plan vs. 67% sin plan" },
         { num: "antes", numColor: "#a78bfa", label: "movilidad interna primero",      sub: "candidatos identificados antes de buscar afuera" },
@@ -475,7 +491,7 @@ const i18n = {
     impact: {
       eyebrow: "Impact on the organization", title: "Why this matters for the business.",
       stats: [
-        { num: "43%",   numColor: "#22c55e", label: "less intent to quit",          sub: "among employees with an active plan" },
+        { num: "43%",   numColor: "#22c55e", label: "less intent to quit",          sub: "among employees with an active plan", countTo: 43, suffix: "%" },
         { num: "3×",    numColor: BRAND,     label: "more impact from recognition", sub: "when immediate vs. delayed" },
         { num: "+24pp", numColor: BRAND,     label: "more 12-month retention",      sub: "91% with plan vs. 67% without" },
         { num: "before",numColor: "#a78bfa", label: "internal mobility first",      sub: "candidates identified before looking outside" },
@@ -1159,7 +1175,9 @@ const slides = [
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 28, opacity: anim ? 1 : 0, transform: anim ? "translateY(0)" : "translateY(20px)", transition: "all 0.5s ease 0.2s" }}>
             {c.stats.map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 16, padding: "22px 28px", textAlign: "center" }}>
-                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 38, fontWeight: 800, color: s.numColor, lineHeight: 1 }}>{s.num}</div>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 38, fontWeight: 800, color: s.numColor, lineHeight: 1 }}>
+                  {s.countTo ? <Counter target={s.countTo} suffix={s.suffix} anim={anim} color={s.numColor} /> : s.num}
+                </div>
                 <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700, color: "#fff", marginTop: 8 }}>{s.label}</div>
                 <div style={{ fontSize: 12, color: "rgba(255,255,255,0.38)", marginTop: 4 }}>{s.sub}</div>
               </div>
