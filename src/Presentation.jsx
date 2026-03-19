@@ -1372,8 +1372,8 @@ export default function Presentation() {
           <button onClick={() => goTo(current - 1)} disabled={current === 0} style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 14px", color: current === 0 ? "rgba(255,255,255,0.2)" : "#fff", fontSize: 12, fontWeight: 600, cursor: current === 0 ? "default" : "pointer", backdropFilter: "blur(8px)", whiteSpace: "nowrap" }}>{t.nav.prev}</button>
           <div style={{ display: "flex", gap: 5, overflowX: "auto", maxWidth: "calc(100vw - 230px)", padding: "2px 4px" }}>
             {t.labels.map((label, i) => (
-              <button key={i} onClick={() => goTo(i)} title={label} style={{ flex: "0 0 auto", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "flex-end", width: 72, height: 42, borderRadius: 8, border: `1.5px solid ${i === current ? BRAND : "rgba(255,255,255,0.1)"}`, background: i === current ? "rgba(111,147,235,0.18)" : i < current ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.02)", cursor: "pointer", transition: "all 0.25s", padding: "0 4px 5px", backdropFilter: "blur(4px)" }}>
-                <span style={{ fontSize: 8, fontWeight: 600, color: i === current ? "#a5bcf5" : "rgba(255,255,255,0.38)", textAlign: "center" }}>{i + 1}. {label}</span>
+              <button key={i} onClick={() => goTo(i)} title={label} style={{ flex: "0 0 auto", display: "flex", flexDirection: "column", alignItems: "flex-start", justifyContent: "flex-end", width: 72, height: 42, borderRadius: 8, border: `1.5px solid ${i === current ? BRAND : "rgba(255,255,255,0.1)"}`, background: i === current ? "rgba(111,147,235,0.18)" : i < current ? "rgba(255,255,255,0.05)" : "rgba(255,255,255,0.02)", cursor: "pointer", transition: "all 0.25s", padding: "0 6px 5px", backdropFilter: "blur(4px)" }}>
+                <span style={{ fontSize: 8, fontWeight: 600, color: i === current ? "#a5bcf5" : "rgba(255,255,255,0.38)", textAlign: "left" }}>{i + 1}. {label}</span>
               </button>
             ))}
           </div>
