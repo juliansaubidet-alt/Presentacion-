@@ -54,8 +54,8 @@ const i18n = {
 
     intro: {
       tag: "🏆 Huckathon 2026 · Producto",
-      titleA: "Plan de ", titleB: "Carrera", titleC: "\nque realmente\nfunciona.",
-      subtitle: "Un módulo que conecta las aspiraciones del colaborador con la visión del manager, en tiempo real.",
+      titleA: "Plan de carrera que\npotencia ", titleB: "el talento", titleC: "\nde tu empresa.",
+      subtitle: "Un módulo que conecta las aspiraciones del colaborador con la visión del manager.",
       meta: [{ label: "Módulo", value: "Career Path" }, { label: "Plataforma", value: "Humand" }, { label: "Año", value: "2026" }],
     },
 
@@ -312,8 +312,8 @@ const i18n = {
 
     intro: {
       tag: "🏆 Hackathon 2026 · Product",
-      titleA: "Career ", titleB: "Path", titleC: "\nthat actually\nworks.",
-      subtitle: "A module that connects employee aspirations with the manager's vision, in real time.",
+      titleA: "Career plan that\nempowers ", titleB: "the talent", titleC: "\nof your company.",
+      subtitle: "A module that connects employee aspirations with the manager's vision.",
       meta: [{ label: "Module", value: "Career Path" }, { label: "Platform", value: "Humand" }, { label: "Year", value: "2026" }],
     },
 
