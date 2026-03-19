@@ -1336,7 +1336,7 @@ export default function Presentation() {
 
       {/* ── TOP HUD ── */}
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 24px", background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, transparent 100%)", opacity: barVisible ? 1 : 0, transition: "opacity 0.4s ease", pointerEvents: barVisible ? "auto" : "none" }}>
-        <img src="/humand-logo.png" alt="humand" style={{ height: 64, opacity: 0.9 }} />
+        <img src="/humand-logo.png" alt="humand" style={{ height: 80, opacity: 0.9 }} />
         <span style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", fontWeight: 600, letterSpacing: "1px", textTransform: "uppercase", background: "rgba(0,0,0,0.35)", padding: "4px 12px", borderRadius: 20, backdropFilter: "blur(8px)" }}>
           {t.labels[current]}
         </span>
