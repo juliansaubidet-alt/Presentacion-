@@ -270,7 +270,7 @@ const i18n = {
       items: [
         { name: "Claude",  icon: "🤖", img: "/claude-logo.jpg", desc: "IA para diseño y desarrollo",      color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
         { name: "GitHub",  icon: "🐙", img: "/github-logo.png", desc: "Control de versiones",             color: "#e2e8f0", bg: "rgba(226,232,240,0.08)" },
-        { name: "Vercel",  icon: "▲",  img: "/vercel-logo.svg", desc: "Deploy y hosting",                 color: "#fff",    bg: "rgba(255,255,255,0.08)" },
+        { name: "Vercel",  icon: "▲",  img: "/vercel-logo.png", desc: "Deploy y hosting",                 color: "#fff",    bg: "rgba(255,255,255,0.08)" },
         { name: "VS Code", icon: "💙", img: "/vscode-logo.png", desc: "Editor de código",                  color: "#4fc3f7", bg: "rgba(79,195,247,0.12)"  },
         { name: "Figma",   icon: "🎨", img: "/figma-logo.png", desc: "Diseño de interfaz",               color: "#f87171", bg: "rgba(248,113,113,0.12)" },
         { name: "Notion",  icon: "📝", img: "/notion-logo.png", desc: "Documentación y organización",     color: "#e2e8f0", bg: "rgba(226,232,240,0.08)" },
@@ -528,7 +528,7 @@ const i18n = {
       items: [
         { name: "Claude",  icon: "🤖", img: "/claude-logo.jpg", desc: "AI for design and development",    color: "#a78bfa", bg: "rgba(167,139,250,0.12)" },
         { name: "GitHub",  icon: "🐙", img: "/github-logo.png", desc: "Version control",                  color: "#e2e8f0", bg: "rgba(226,232,240,0.08)" },
-        { name: "Vercel",  icon: "▲",  img: "/vercel-logo.svg", desc: "Deploy and hosting",               color: "#fff",    bg: "rgba(255,255,255,0.08)" },
+        { name: "Vercel",  icon: "▲",  img: "/vercel-logo.png", desc: "Deploy and hosting",               color: "#fff",    bg: "rgba(255,255,255,0.08)" },
         { name: "VS Code", icon: "💙", img: "/vscode-logo.png", desc: "Code editor",                       color: "#4fc3f7", bg: "rgba(79,195,247,0.12)"  },
         { name: "Figma",   icon: "🎨", img: "/figma-logo.png", desc: "Interface design",                 color: "#f87171", bg: "rgba(248,113,113,0.12)" },
         { name: "Notion",  icon: "📝", img: "/notion-logo.png", desc: "Documentation and organization",   color: "#e2e8f0", bg: "rgba(226,232,240,0.08)" },
